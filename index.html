@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PX FIVEM UPDATE LOGGER</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="theme-toggle">
+        <button id="themeToggle" class="theme-toggle-btn">
+            <span class="light-icon">☀️</span>
+            <span class="dark-icon">🌙</span>
+        </button>
+    </div>
+    <div class="container">
+        <h1>PX FIVEM UPDATE LOGGER</h1>
+        <form id="updateForm">
+            <!-- Header Section -->
+            <div class="form-group">
+                <h2>Header/Title</h2>
+                <label><input type="radio" name="headerType" value="custom" checked> Custom</label>
+                <label><input type="radio" name="headerType" value="preconfigured"> Preconfigured</label>
+                <input type="text" id="customHeader" placeholder="Enter custom header/title" value="## 🚀 SERVER UPDATES">
+                <select id="preconfiguredHeader" style="display:none;">
+                    <option value="## 🚀 SERVER UPDATES">Server Updates</option>
+                    <option value="## 🚀 MAJOR UPDATE">Major Update</option>
+                    <option value="## 🔄 MINOR UPDATE">Minor Update</option>
+                    <option value="## 🛠️ HOTFIX">Hotfix</option>
+                    <option value="## ⚙️ MAINTENANCE UPDATE">Maintenance Update</option>
+                </select>
+            </div>
+
+            <!-- Main Content -->
+            <div class="form-group">
+                <h2>What's New</h2>
+                <textarea id="whatsNew" placeholder="Enter new features (one per line)"></textarea>
+            </div>
+            <div class="form-group">
+                <h2>Bug Fixes & Updates</h2>
+                <textarea id="bugFixes" placeholder="Enter bug fixes and updates (one per line)"></textarea>
+            </div>
+            <div class="form-group">
+                <h2>Removed Features</h2>
+                <textarea id="removed" placeholder="Enter removed features (one per line)"></textarea>
+            </div>
+
+            <!-- Footer Section -->
+            <div class="form-group">
+                <h2>Footer/Thank You Message</h2>
+                <label><input type="radio" name="footerType" value="custom" checked> Custom</label>
+                <label><input type="radio" name="footerType" value="preconfigured"> Preconfigured</label>
+                <input type="text" id="customFooter" placeholder="Enter custom footer message" value="> *Thank you for your continued support! Stay tuned for more exciting updates coming soon!* 🎮">
+                <select id="preconfiguredFooter" style="display:none;">
+                    <option value="> *Thank you for your continued support! Stay tuned for more exciting updates coming soon!* 🎮">Default Thank You</option>
+                    <option value="> *We appreciate your feedback and support!* 🙏">Appreciation</option>
+                    <option value="> *More features and fixes are on the way. Stay tuned!* 🚀">More Coming Soon</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <h2>Discord Webhook Settings</h2>
+                <input type="url" id="webhookUrl" placeholder="Enter your Discord webhook URL" required>
+                <input type="text" id="webhookName" placeholder="Enter webhook name (default: FiveM Update Bot)" value="FiveM Update Bot">
+                <input type="url" id="webhookAvatar" placeholder="Enter webhook avatar URL (optional)" value="https://i.imgur.com/4M34hi2.png">
+            </div>
+            
+            <div class="form-group">
+                <h2>Role Mentions (Optional)</h2>
+                <input type="text" id="roleMentions" placeholder="Enter role IDs to mention (comma-separated)">
+            </div>
+            
+            <button type="submit">Send Update Log</button>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 

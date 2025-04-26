@@ -1,0 +1,239 @@
+:root {
+    /* Dark Theme (Default) */
+    --bg-primary: #0a0a0a;
+    --bg-secondary: #1a1a1a;
+    --text-primary: #e0e0e0;
+    --text-secondary: #a0a0a0;
+    --accent-primary: #00bfff;
+    --accent-secondary: #0080ff;
+    --border-color: #2a2a2a;
+    --input-bg: #1a1a1a;
+    --shadow-color: rgba(0, 191, 255, 0.1);
+    --neon-glow: 0 0 10px rgba(0, 191, 255, 0.5);
+}
+
+[data-theme="light"] {
+    --bg-primary: #f0f0f0;
+    --bg-secondary: #ffffff;
+    --text-primary: #2a2a2a;
+    --text-secondary: #666666;
+    --accent-primary: #0080ff;
+    --accent-secondary: #0066cc;
+    --border-color: #e0e0e0;
+    --input-bg: #ffffff;
+    --shadow-color: rgba(0, 128, 255, 0.1);
+    --neon-glow: 0 0 10px rgba(0, 128, 255, 0.3);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+
+body {
+    font-family: 'Cairo', sans-serif;
+    line-height: 1.6;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    padding: 20px;
+    min-height: 100vh;
+}
+
+/* Theme Toggle */
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.theme-toggle-btn {
+    background: var(--bg-secondary);
+    border: 2px solid var(--accent-primary);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--neon-glow);
+    transition: all 0.3s;
+}
+
+.theme-toggle-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px var(--accent-primary);
+}
+
+[data-theme="dark"] .light-icon {
+    display: none;
+}
+
+[data-theme="light"] .dark-icon {
+    display: none;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: var(--bg-secondary);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px var(--shadow-color);
+    border: 1px solid var(--border-color);
+}
+
+h1 {
+    text-align: center;
+    color: var(--accent-primary);
+    margin-bottom: 30px;
+    font-size: 2.5em;
+    text-shadow: var(--neon-glow);
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+h2 {
+    color: var(--accent-secondary);
+    margin-bottom: 15px;
+    font-size: 1.3em;
+    text-shadow: 0 0 5px var(--accent-secondary);
+    font-weight: 600;
+}
+
+.form-group {
+    margin-bottom: 25px;
+    background: var(--bg-primary);
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+/* Radio Buttons */
+input[type="radio"] {
+    accent-color: var(--accent-primary);
+    margin-right: 8px;
+}
+
+label {
+    color: var(--text-secondary);
+    margin-right: 15px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+/* Input Fields */
+input[type="text"],
+input[type="url"],
+textarea,
+select {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--input-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    color: var(--text-primary);
+    font-size: 14px;
+    transition: all 0.3s;
+    font-family: 'Cairo', sans-serif;
+}
+
+input[type="text"]:focus,
+input[type="url"]:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-color: var(--accent-primary);
+    box-shadow: var(--neon-glow);
+}
+
+textarea {
+    min-height: 100px;
+    resize: vertical;
+    font-family: 'Cairo', monospace;
+}
+
+/* Submit Button */
+button[type="submit"] {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(45deg, var(--accent-primary), var(--accent-secondary));
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s;
+    box-shadow: var(--neon-glow);
+    font-family: 'Cairo', sans-serif;
+}
+
+button[type="submit"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 20px var(--accent-primary);
+}
+
+button[type="submit"]:active {
+    transform: translateY(0);
+}
+
+/* Notification */
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 15px 25px;
+    border-radius: 6px;
+    color: white;
+    font-weight: 600;
+    display: none;
+    z-index: 1000;
+    animation: slideIn 0.3s ease-out;
+    box-shadow: var(--neon-glow);
+    font-family: 'Cairo', sans-serif;
+}
+
+.notification.success {
+    background: linear-gradient(45deg, #00bfff, #0080ff);
+}
+
+.notification.error {
+    background: linear-gradient(45deg, #ff4444, #cc0000);
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--accent-primary);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-secondary);
+} 
