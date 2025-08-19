@@ -2,7 +2,7 @@
 
 A modern, user-friendly web panel for sending beautifully formatted update logs to Discord through webhooks. Perfect for FiveM server administrators who want to keep their community informed about server updates in a professional and organized way.
 
-![Preview](https://media.discordapp.net/attachments/1234585384269385882/1404182296679944292/772205e82db62ab95425ef0c7064b62bca1c265c.png?ex=689a422b&is=6898f0ab&hm=542b01f328c10008b6892cedc2f142922e834f686da13907e16dc45bd8c52014&=&format=webp&quality=lossless&width=96&height=96)
+![Preview](https://media.discordapp.net/attachments/1404374179524116490/1404374432322949231/image-1.png?ex=68a629dc&is=68a4d85c&hm=10140f7c383223818fc6241fcbf2ca7b82bf8b9e563bb325154578d732099998&=)
 
 ## 🌟 Features
 
